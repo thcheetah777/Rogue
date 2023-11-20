@@ -9,6 +9,7 @@ class_name Player
 @onready var sprite := $Sprite
 
 var target_rotation = 0
+var dust_scene = preload("res://dust.tscn")
 
 func _ready() -> void:
 	Globals.player = self
@@ -25,3 +26,8 @@ func _physics_process(delta: float) -> void:
 	target_rotation = x_input * run_rotation
 
 	move_and_slide()
+
+func _on_dust_timer_timeout() -> void:
+	var dust = dust_scene.instantiate() as Sprite2D
+	dust.global_position = global_position
+	add_child(dust)

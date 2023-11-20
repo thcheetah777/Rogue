@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b12ppqbxab0vk"]
+[gd_scene load_steps=4 format=3 uid="uid://b12ppqbxab0vk"]
 
+[ext_resource type="PackedScene" uid="uid://c2gng30xxg4gg" path="res://mouse.tscn" id="1_dv8dy"]
 [ext_resource type="PackedScene" uid="uid://cgiq1kt8weh2j" path="res://wall.tscn" id="1_wvsw4"]
 [ext_resource type="PackedScene" uid="uid://da1qb210gjvdg" path="res://player.tscn" id="2_jwm52"]
 
 [node name="Main" type="Node"]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Mouse" parent="Canvas" instance=ExtResource("1_dv8dy")]
 
 [node name="World" type="Node2D" parent="."]
 

@@ -9,6 +9,10 @@
 [node name="Canvas" type="CanvasLayer" parent="."]
 
 [node name="Mouse" parent="Canvas" instance=ExtResource("1_dv8dy")]
+offset_left = 85.0
+offset_top = 85.0
+offset_right = 95.0
+offset_bottom = 95.0
 
 [node name="World" type="Node2D" parent="."]
 

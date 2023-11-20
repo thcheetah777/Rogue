@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GunSettings" load_steps=3 format=3 uid="uid://cuyy16wsyf323"]
+
+[ext_resource type="Script" path="res://gun_settings.gd" id="1_q1o87"]
+[ext_resource type="Texture2D" uid="uid://c52q1lgaojkl2" path="res://assets/pistol.png" id="2_mkoik"]
+
+[resource]
+script = ExtResource("1_q1o87")
+sprite = ExtResource("2_mkoik")
+bullet_size = 1.0
+fire_rate = 5.0
+spread = 4
+damage = 1
+offset = 10
+kick = 5

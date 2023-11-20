@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://da1qb210gjvdg"]
+[gd_scene load_steps=6 format=3 uid="uid://da1qb210gjvdg"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_eie53"]
 [ext_resource type="Texture2D" uid="uid://dqm4a8xw7pfdl" path="res://assets/player.png" id="1_ikshr"]
-[ext_resource type="Texture2D" uid="uid://c52q1lgaojkl2" path="res://assets/gun.png" id="3_r5suj"]
+[ext_resource type="Resource" uid="uid://civldxor3hwnr" path="res://guns/shotgun.tres" id="2_o5opt"]
+[ext_resource type="Texture2D" uid="uid://c52q1lgaojkl2" path="res://assets/pistol.png" id="4_0vkrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80320"]
 size = Vector2(6, 6)
@@ -12,6 +13,7 @@ collision_layer = 2
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_eie53")
+gun = ExtResource("2_o5opt")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ikshr")
@@ -26,10 +28,9 @@ autostart = true
 [node name="WeaponHolder" type="Node2D" parent="."]
 
 [node name="Weapon" type="Node2D" parent="WeaponHolder"]
-position = Vector2(10, 0)
+position = Vector2(9, 0)
 
 [node name="Sprite" type="Sprite2D" parent="WeaponHolder/Weapon"]
-rotation = 1.57079
-texture = ExtResource("3_r5suj")
+texture = ExtResource("4_0vkrl")
 
 [connection signal="timeout" from="DustTimer" to="." method="_on_dust_timer_timeout"]

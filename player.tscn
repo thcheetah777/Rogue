@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_eie53"]
 [ext_resource type="Texture2D" uid="uid://dqm4a8xw7pfdl" path="res://assets/player.png" id="1_ikshr"]
-[ext_resource type="Resource" uid="uid://cmktjxl5qsg3n" path="res://guns/shotgun.tres" id="2_o5opt"]
+[ext_resource type="Resource" uid="uid://cuyy16wsyf323" path="res://guns/pistol.tres" id="2_b0qxh"]
 [ext_resource type="Texture2D" uid="uid://c52q1lgaojkl2" path="res://assets/pistol.png" id="4_0vkrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80320"]
@@ -13,7 +13,7 @@ collision_layer = 2
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_eie53")
-gun = ExtResource("2_o5opt")
+gun = ExtResource("2_b0qxh")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ikshr")

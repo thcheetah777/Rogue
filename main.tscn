@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b12ppqbxab0vk"]
+[gd_scene load_steps=7 format=3 uid="uid://b12ppqbxab0vk"]
 
 [ext_resource type="PackedScene" uid="uid://c2gng30xxg4gg" path="res://mouse.tscn" id="1_dv8dy"]
 [ext_resource type="PackedScene" uid="uid://cgiq1kt8weh2j" path="res://wall.tscn" id="1_wvsw4"]
 [ext_resource type="Script" path="res://world.gd" id="2_6thic"]
 [ext_resource type="PackedScene" uid="uid://da1qb210gjvdg" path="res://player.tscn" id="2_jwm52"]
+[ext_resource type="Texture2D" uid="uid://bosudewxid5es" path="res://assets/health-circle.png" id="2_rlo6o"]
+[ext_resource type="Texture2D" uid="uid://b6pp6pw8ubwcm" path="res://assets/health-circle-empty.png" id="2_x2ubq"]
 
 [node name="Main" type="Node"]
 
@@ -14,6 +16,16 @@ offset_left = 85.0
 offset_top = 85.0
 offset_right = 95.0
 offset_bottom = 95.0
+
+[node name="Health" type="TextureProgressBar" parent="Canvas"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 19.0
+offset_bottom = 20.0
+value = 80.0
+fill_mode = 3
+texture_under = ExtResource("2_x2ubq")
+texture_progress = ExtResource("2_rlo6o")
 
 [node name="World" type="Node2D" parent="."]
 script = ExtResource("2_6thic")

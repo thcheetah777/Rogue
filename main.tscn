@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b12ppqbxab0vk"]
+[gd_scene load_steps=5 format=3 uid="uid://b12ppqbxab0vk"]
 
 [ext_resource type="PackedScene" uid="uid://c2gng30xxg4gg" path="res://mouse.tscn" id="1_dv8dy"]
 [ext_resource type="PackedScene" uid="uid://cgiq1kt8weh2j" path="res://wall.tscn" id="1_wvsw4"]
+[ext_resource type="Script" path="res://world.gd" id="2_6thic"]
 [ext_resource type="PackedScene" uid="uid://da1qb210gjvdg" path="res://player.tscn" id="2_jwm52"]
 
 [node name="Main" type="Node"]
@@ -15,6 +16,7 @@ offset_right = 95.0
 offset_bottom = 95.0
 
 [node name="World" type="Node2D" parent="."]
+script = ExtResource("2_6thic")
 
 [node name="Walls" type="Node" parent="World"]
 
@@ -32,5 +34,5 @@ rotation = 1.57079
 position = Vector2(176, 90)
 rotation = 1.57079
 
-[node name="Player" parent="." instance=ExtResource("2_jwm52")]
+[node name="Player" parent="World" instance=ExtResource("2_jwm52")]
 position = Vector2(90, 90)

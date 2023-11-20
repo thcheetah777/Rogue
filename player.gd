@@ -8,18 +8,24 @@ class_name Player
 
 @onready var sprite := $Sprite
 @onready var weapon_holder := $WeaponHolder
+@onready var weapon := $WeaponHolder/Weapon
 @onready var weapon_sprite := $WeaponHolder/Weapon/Sprite
 
 var target_rotation = 0
 var dust_scene = preload("res://dust.tscn")
+var bullet_scene = preload("res://bullet.tscn")
 
 func _ready() -> void:
 	Globals.player = self
 
 func _process(delta: float) -> void:
 	sprite.rotation_degrees = move_toward(sprite.rotation_degrees, target_rotation,  run_rotation_smoothing * delta)
+
 	weapon_holder.look_at(get_global_mouse_position())
 	weapon_sprite.flip_h = not (weapon_holder.global_rotation_degrees > -90 and weapon_holder.global_rotation_degrees < 90)
+
+	if Input.is_action_just_pressed("fire"):
+		fire()
 
 func _physics_process(delta: float) -> void:
 	var x_input = Input.get_axis("left", "right")
@@ -30,6 +36,13 @@ func _physics_process(delta: float) -> void:
 	target_rotation = x_input * run_rotation
 
 	move_and_slide()
+
+func fire() -> void:
+	var bullet = bullet_scene.instantiate() as Bullet
+	bullet.global_position = weapon.global_position
+	bullet.look_at(get_global_mouse_position())
+	bullet.speed = 300
+	Globals.world.add_child(bullet)
 
 func _on_dust_timer_timeout() -> void:
 	var dust = dust_scene.instantiate() as Sprite2D

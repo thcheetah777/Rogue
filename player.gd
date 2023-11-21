@@ -2,11 +2,13 @@ extends CharacterBody2D
 class_name Player
 
 @export var move_speed = 4000
+@export var max_health = 100
 
 @export var run_rotation = 30
 @export var run_rotation_smoothing = 250
 @export var gun_offset_smoothing = 20
 @export var gun_scale_smoothing = 10
+@export var health_ui: TextureProgressBar
 
 @export var gun: GunSettings
 
@@ -20,6 +22,7 @@ var bullet_scene = preload("res://bullet.tscn")
 var target_rotation = 0
 var original_weapon_scale = Vector2.ONE
 var next_time_to_fire = 0
+var health = max_health
 
 func _enter_tree() -> void:
 	Globals.player = self
@@ -64,3 +67,18 @@ func fire() -> void:
 	bullet.speed = gun.bullet_speed
 	bullet.damage = gun.damage
 	Globals.world.add_child(bullet)
+
+func update_health():
+	health_ui.value = health
+	if health <= 0:
+		die()
+
+func die():
+	print("Dieeedd")
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area is EnemyBullet:
+		var bullet = area as EnemyBullet
+		bullet.queue_free()
+		health -= bullet.damage
+		update_health()

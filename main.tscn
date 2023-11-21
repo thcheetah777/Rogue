@@ -21,11 +21,11 @@ offset_right = 95.0
 offset_bottom = 95.0
 
 [node name="Health" type="TextureProgressBar" parent="Canvas"]
-offset_left = 3.0
-offset_top = 4.0
-offset_right = 19.0
-offset_bottom = 20.0
-value = 80.0
+offset_left = 159.0
+offset_top = 159.0
+offset_right = 175.0
+offset_bottom = 175.0
+value = 100.0
 fill_mode = 3
 texture_under = ExtResource("2_x2ubq")
 texture_progress = ExtResource("2_rlo6o")
@@ -49,5 +49,6 @@ rotation = 1.57079
 position = Vector2(176, 90)
 rotation = 1.57079
 
-[node name="Player" parent="World" instance=ExtResource("2_jwm52")]
+[node name="Player" parent="World" node_paths=PackedStringArray("health_ui") instance=ExtResource("2_jwm52")]
 position = Vector2(90, 90)
+health_ui = NodePath("../../Canvas/Health")

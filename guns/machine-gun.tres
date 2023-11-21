@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="GunSettings" load_steps=3 format=3 uid="uid://civldxor3hwnr"]
 
-[ext_resource type="Script" path="res://gun_settings.gd" id="1_g6qqy"]
-[ext_resource type="Texture2D" uid="uid://c6yw8fwyobaer" path="res://assets/machine-gun.png" id="2_to43s"]
+[ext_resource type="Script" path="res://gun_settings.gd" id="1_0pfra"]
+[ext_resource type="Texture2D" uid="uid://c6yw8fwyobaer" path="res://assets/machine-gun.png" id="2_h0jhn"]
 
 [resource]
-script = ExtResource("1_g6qqy")
-sprite = ExtResource("2_to43s")
+script = ExtResource("1_0pfra")
+sprite = ExtResource("2_h0jhn")
 bullet_size = 0.5
-bullet_speed = 400
+bullet_speed = 200
 fire_rate = 12.0
 spread = 12.0
 damage = 0.5

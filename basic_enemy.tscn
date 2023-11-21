@@ -6,4 +6,3 @@
 [node name="BasicEnemy" instance=ExtResource("1_pghnd")]
 script = ExtResource("1_bqju1")
 move_speed = 20
-max_health = 8

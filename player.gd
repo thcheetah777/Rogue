@@ -22,8 +22,10 @@ var target_rotation = 0
 var original_weapon_scale = Vector2.ONE
 var next_time_to_fire = 0
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	Globals.player = self
+
+func _ready() -> void:
 	weapon_sprite.texture = gun.sprite
 	weapon.position.x = gun.offset
 

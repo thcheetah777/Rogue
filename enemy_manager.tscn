@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d03ebj53fhrv6"]
+
+[ext_resource type="Script" path="res://enemy_manager.gd" id="1_q3fep"]
+
+[node name="EnemyManager" type="Node"]
+script = ExtResource("1_q3fep")
+
+[node name="SpawnDelayTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnDelayTimer" to="." method="_on_spawn_delay_timeout"]

@@ -21,4 +21,8 @@ func take_damage(amount: float):
 	scale = hurt_expand * Vector2.ONE
 	sprite.play("hurt")
 	if health <= 0:
-		queue_free()
+		die()
+
+func die():
+	queue_free()
+	Events.emit_signal("enemy_died")

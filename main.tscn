@@ -1,18 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://b12ppqbxab0vk"]
+[gd_scene load_steps=8 format=3 uid="uid://b12ppqbxab0vk"]
 
 [ext_resource type="PackedScene" uid="uid://c2gng30xxg4gg" path="res://mouse.tscn" id="1_dv8dy"]
 [ext_resource type="PackedScene" uid="uid://cgiq1kt8weh2j" path="res://wall.tscn" id="1_wvsw4"]
 [ext_resource type="PackedScene" uid="uid://d03ebj53fhrv6" path="res://enemy_manager.tscn" id="1_x2c8l"]
 [ext_resource type="Script" path="res://world.gd" id="2_6thic"]
 [ext_resource type="PackedScene" uid="uid://da1qb210gjvdg" path="res://player.tscn" id="2_jwm52"]
-[ext_resource type="Resource" uid="uid://du7ctjaa2osbx" path="res://waves/corners.tres" id="2_kg075"]
 [ext_resource type="Texture2D" uid="uid://bosudewxid5es" path="res://assets/health-circle.png" id="2_rlo6o"]
 [ext_resource type="Texture2D" uid="uid://b6pp6pw8ubwcm" path="res://assets/health-circle-empty.png" id="2_x2ubq"]
 
 [node name="Main" type="Node"]
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_x2c8l")]
-wave_formations = Array[Resource("res://wave_formation.gd")]([ExtResource("2_kg075")])
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 

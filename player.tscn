@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://da1qb210gjvdg"]
+[gd_scene load_steps=7 format=3 uid="uid://da1qb210gjvdg"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_eie53"]
 [ext_resource type="Texture2D" uid="uid://dqm4a8xw7pfdl" path="res://assets/player.png" id="1_ikshr"]
-[ext_resource type="Resource" uid="uid://cuyy16wsyf323" path="res://guns/pistol.tres" id="2_d41hn"]
+[ext_resource type="Resource" uid="uid://civldxor3hwnr" path="res://guns/machine-gun.tres" id="2_vobfl"]
 [ext_resource type="Texture2D" uid="uid://c52q1lgaojkl2" path="res://assets/pistol.png" id="4_0vkrl"]
+[ext_resource type="PackedScene" uid="uid://chk7kppysu2s2" path="res://dust.tscn" id="5_s7h7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80320"]
 size = Vector2(6, 6)
@@ -13,7 +14,7 @@ collision_layer = 2
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_eie53")
-gun = ExtResource("2_d41hn")
+gun = ExtResource("2_vobfl")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ikshr")
@@ -21,9 +22,7 @@ texture = ExtResource("1_ikshr")
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_80320")
 
-[node name="DustTimer" type="Timer" parent="."]
-wait_time = 0.3
-autostart = true
+[node name="Dust" parent="." instance=ExtResource("5_s7h7u")]
 
 [node name="WeaponHolder" type="Node2D" parent="."]
 
@@ -32,5 +31,3 @@ position = Vector2(9, 0)
 
 [node name="Sprite" type="Sprite2D" parent="WeaponHolder/Weapon"]
 texture = ExtResource("4_0vkrl")
-
-[connection signal="timeout" from="DustTimer" to="." method="_on_dust_timer_timeout"]

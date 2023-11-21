@@ -15,7 +15,6 @@ class_name Player
 @onready var weapon := $WeaponHolder/Weapon
 @onready var weapon_sprite := $WeaponHolder/Weapon/Sprite
 
-var dust_scene = preload("res://dust.tscn")
 var bullet_scene = preload("res://bullet.tscn")
 
 var target_rotation = 0
@@ -64,8 +63,3 @@ func fire() -> void:
 	bullet.speed = gun.bullet_speed
 	bullet.damage = gun.damage
 	Globals.world.add_child(bullet)
-
-func _on_dust_timer_timeout() -> void:
-	var dust = dust_scene.instantiate() as Sprite2D
-	dust.global_position = global_position
-	add_child(dust)

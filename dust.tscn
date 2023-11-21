@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhb8skatvdiu4"]
+[gd_scene load_steps=2 format=3 uid="uid://chk7kppysu2s2"]
 
-[ext_resource type="Texture2D" uid="uid://nx4qoicrkd0" path="res://assets/dust.png" id="1_bjdas"]
 [ext_resource type="Script" path="res://dust.gd" id="2_ktx4k"]
 
-[node name="Dust" type="Sprite2D"]
-top_level = true
-z_index = -50
-texture = ExtResource("1_bjdas")
+[node name="Dust" type="Timer"]
+wait_time = 0.3
+autostart = true
 script = ExtResource("2_ktx4k")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

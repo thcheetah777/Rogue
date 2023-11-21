@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpo001i3gkqlc"]
+[gd_scene load_steps=4 format=3 uid="uid://dpo001i3gkqlc"]
 
 [ext_resource type="Script" path="res://basic_enemy.gd" id="1_bqju1"]
 [ext_resource type="PackedScene" uid="uid://co0nmxou82hpo" path="res://enemy.tscn" id="1_pghnd"]
+[ext_resource type="PackedScene" uid="uid://chk7kppysu2s2" path="res://dust.tscn" id="3_d0aj2"]
 
 [node name="BasicEnemy" instance=ExtResource("1_pghnd")]
 script = ExtResource("1_bqju1")
-move_speed = 20
+dash_speed_min = 30
+dash_speed_max = 60
+decceleration = 30
+
+[node name="Dust" parent="." index="2" instance=ExtResource("3_d0aj2")]
+dust_color = Color(0.858824, 0.337255, 0.223529, 1)

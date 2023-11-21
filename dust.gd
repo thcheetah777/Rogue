@@ -1,9 +1,11 @@
-extends Sprite2D
+extends Timer
 
-const DURATION = 1
+@export var dust_color = Color("1d354a")
 
-func _ready() -> void:
-	var tween = get_tree().create_tween().set_parallel()
-	tween.tween_property(self, "rotation_degrees", 180 if randf() > 0.5 else -180, DURATION)
-	tween.tween_property(self, "scale", Vector2.ZERO, DURATION)
-	tween.tween_callback(queue_free).set_delay(DURATION)
+var dust_scene = preload("res://dust_particle.tscn")
+
+func _on_timeout() -> void:
+	var dust = dust_scene.instantiate() as Sprite2D
+	dust.global_position = get_parent().position
+	dust.self_modulate = dust_color
+	add_child(dust)

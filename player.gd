@@ -62,6 +62,7 @@ func fire() -> void:
 	bullet.scale = Vector2.ONE * gun.bullet_size
 	bullet.look_at(get_global_mouse_position().rotated(spread))
 	bullet.speed = gun.bullet_speed
+	bullet.damage = gun.damage
 	Globals.world.add_child(bullet)
 
 func _on_dust_timer_timeout() -> void:

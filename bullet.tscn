@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dsxrk7jio0wpi" path="res://assets/bullet.png" id="1_qheak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f1ti"]
-size = Vector2(18, 12)
+size = Vector2(20, 14)
 
 [node name="Bullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_iqd50")
 
 [node name="Sprite" type="Sprite2D" parent="."]

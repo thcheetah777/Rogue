@@ -1,19 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2cylxsj7s1lm"]
+[gd_scene load_steps=3 format=3 uid="uid://dpo001i3gkqlc"]
 
-[ext_resource type="Texture2D" uid="uid://ct21gtxmpruvg" path="res://assets/basic-enemy.png" id="1_7qem6"]
 [ext_resource type="Script" path="res://basic_enemy.gd" id="1_bqju1"]
+[ext_resource type="PackedScene" uid="uid://co0nmxou82hpo" path="res://enemy.tscn" id="1_pghnd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2og85"]
-size = Vector2(6, 6)
-
-[node name="BasicEnemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
-motion_mode = 1
+[node name="BasicEnemy" instance=ExtResource("1_pghnd")]
 script = ExtResource("1_bqju1")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_7qem6")
-
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2og85")
+move_speed = 20
+max_health = 8

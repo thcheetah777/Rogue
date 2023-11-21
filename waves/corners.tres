@@ -1,28 +1,48 @@
-[gd_resource type="Resource" script_class="WaveFormation" load_steps=7 format=3 uid="uid://elufvvs0rci3"]
+[gd_resource type="Resource" script_class="WaveFormation" load_steps=11 format=3 uid="uid://elufvvs0rci3"]
 
 [ext_resource type="Script" path="res://wave_formation.gd" id="1_ctika"]
 [ext_resource type="Script" path="res://enemy_data.gd" id="1_xtg4v"]
 
 [sub_resource type="Resource" id="Resource_aa7j4"]
 script = ExtResource("1_xtg4v")
-type = 0
+type = 1
 position = Vector2(30, 30)
 
 [sub_resource type="Resource" id="Resource_eaovn"]
 script = ExtResource("1_xtg4v")
-type = 0
+type = 1
 position = Vector2(150, 30)
 
 [sub_resource type="Resource" id="Resource_tp065"]
 script = ExtResource("1_xtg4v")
-type = 0
+type = 1
 position = Vector2(150, 150)
 
 [sub_resource type="Resource" id="Resource_ijcyi"]
 script = ExtResource("1_xtg4v")
-type = 0
+type = 1
 position = Vector2(30, 150)
+
+[sub_resource type="Resource" id="Resource_8cui1"]
+script = ExtResource("1_xtg4v")
+type = 0
+position = Vector2(30, 90)
+
+[sub_resource type="Resource" id="Resource_i4wuw"]
+script = ExtResource("1_xtg4v")
+type = 0
+position = Vector2(90, 30)
+
+[sub_resource type="Resource" id="Resource_blhi3"]
+script = ExtResource("1_xtg4v")
+type = 0
+position = Vector2(150, 90)
+
+[sub_resource type="Resource" id="Resource_btcox"]
+script = ExtResource("1_xtg4v")
+type = 0
+position = Vector2(90, 150)
 
 [resource]
 script = ExtResource("1_ctika")
-enemies = Array[ExtResource("1_xtg4v")]([SubResource("Resource_aa7j4"), SubResource("Resource_eaovn"), SubResource("Resource_tp065"), SubResource("Resource_ijcyi")])
+enemies = Array[ExtResource("1_xtg4v")]([SubResource("Resource_aa7j4"), SubResource("Resource_eaovn"), SubResource("Resource_tp065"), SubResource("Resource_ijcyi"), SubResource("Resource_8cui1"), SubResource("Resource_i4wuw"), SubResource("Resource_blhi3"), SubResource("Resource_btcox")])

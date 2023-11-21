@@ -56,10 +56,11 @@ func fire() -> void:
 	weapon.scale = Vector2.ONE * gun.expand
 
 	var bullet = bullet_scene.instantiate() as Bullet
-	var spread = deg_to_rad(randf_range(-gun.spread, gun.spread))
+	var spread = randf_range(-gun.spread, gun.spread)
 	bullet.global_position = weapon.global_position
 	bullet.scale = Vector2.ONE * gun.bullet_size
-	bullet.look_at(get_global_mouse_position().rotated(spread))
+	bullet.look_at(get_global_mouse_position())
+	bullet.rotation_degrees += spread
 	bullet.speed = gun.bullet_speed
 	bullet.damage = gun.damage
 	Globals.world.add_child(bullet)

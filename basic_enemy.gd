@@ -1,5 +1,4 @@
 extends Enemy
-class_name BasicEnemy
 
 @export var dash_speed_min = 30
 @export var dash_speed_max = 60
@@ -19,4 +18,4 @@ func _physics_process(delta: float) -> void:
 func dash():
 	look_at(Globals.player.position)
 	var speed = randf_range(dash_speed_min, dash_speed_max)
-	velocity = Vector2.RIGHT.rotated(rotation) * speed
+	velocity = Vector2.from_angle(rotation) * speed

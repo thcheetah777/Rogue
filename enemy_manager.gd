@@ -1,4 +1,10 @@
 extends Node
+class_name EnemyManager
+
+enum EnemyType {
+	BASIC,
+	TURRET
+}
 
 @export var wave_formations: Array[WaveFormation]
 
@@ -8,6 +14,7 @@ var current_formation = null
 var enemy_count = 0
 
 var basic_enemy_scene = preload("res://basic_enemy.tscn")
+var turret_enemy_scene = preload("res://turret_enemy.tscn")
 
 @onready var spawn_delay_timer := $SpawnDelayTimer
 
@@ -30,7 +37,13 @@ func new_wave():
 
 func _on_spawn_delay_timeout() -> void:
 	for enemy in current_formation.enemies:
-		var new_enemy = basic_enemy_scene.instantiate()
+		var enemy_scene: PackedScene
+
+		match enemy.type:
+			EnemyType.BASIC: enemy_scene = basic_enemy_scene
+			EnemyType.TURRET: enemy_scene = turret_enemy_scene
+
+		var new_enemy = enemy_scene.instantiate() as Enemy
 		new_enemy.position = enemy.position
 		Globals.world.add_child(new_enemy)
 

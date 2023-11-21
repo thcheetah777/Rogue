@@ -1,33 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://co0nmxou82hpo"]
+[gd_scene load_steps=4 format=3 uid="uid://co0nmxou82hpo"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_fc6sl"]
 [ext_resource type="Texture2D" uid="uid://ct21gtxmpruvg" path="res://assets/basic-enemy.png" id="1_vy2u0"]
-[ext_resource type="Texture2D" uid="uid://beuk5hhcgpjdl" path="res://assets/basic-enemy-hurt.png" id="2_46t8b"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4cu6i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_46t8b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_vy2u0")
-}],
-"loop": false,
-"name": &"hurt",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_vy2u0")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 8.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2l4t"]
-size = Vector2(6, 6)
+size = Vector2(10, 10)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -35,9 +12,9 @@ collision_mask = 11
 motion_mode = 1
 script = ExtResource("1_fc6sl")
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_4cu6i")
-animation = &"idle"
+[node name="Sprite" type="Sprite2D" parent="."]
+self_modulate = Color(0.858824, 0.341176, 0.223529, 1)
+texture = ExtResource("1_vy2u0")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h2l4t")
